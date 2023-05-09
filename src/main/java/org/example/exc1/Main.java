@@ -11,12 +11,14 @@ public class Main {
         pleaseSort.add("a");
         pleaseSort.add("b");
         pleaseSort.add("c");
-        pleaseSort.add("d");
+        pleaseSort.add("D");
         pleaseSort.add("z");
 
         Sorter sorter = new Sorter();
 
         System.out.println(sorter.sortString(pleaseSort));
+
+        System.out.println(sorter.sortStringIgnoreCase(pleaseSort));
 
 
     }
