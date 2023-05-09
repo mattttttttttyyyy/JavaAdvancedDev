@@ -20,6 +20,22 @@ public class Demo {
 
         System.out.println(carService.mostExpensiveCar());
 
+        System.out.println("\nCheapest expensive: ");
+        System.out.println(carService.cheapestCar());
+
+        System.out.println("*****************");
+        System.out.println(carService.cars);
+        System.out.println(carService.sortAllCars("descending"));
+
+        System.out.println("****************");
+        Car car2 = new Car("BMW car", "X5", 16000, 2023, Car.Engines.V12);
+
+        System.out.println(carService.isCarOnTheList(car2));
+
+
+
+
+
 
 
 

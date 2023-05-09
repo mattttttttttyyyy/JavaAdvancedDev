@@ -1,9 +1,5 @@
 package org.example.taskFive;
 /*Create a class called CarService that will contain a list of cars and implement the following methods:
-        returning the most expensive car,
-        returning the cheapest car,
-        returning cars from at least 3 manufacturers,
-        returning a list of all cars sorted according to the passed parameter: ascending/descending,
         checking if a specific car is on the list,
         returning a list of cars produced by a specific manufacturer,
         returning a list of cars produced by a manufacturer with a founding year <,>,<=,>=,=,!= from the specified year.*/
@@ -61,6 +57,51 @@ public class CarService {
                 .comparing(Car::getYearOfProduction)
                 .reversed()).toList().get(0).toString();
     }
+
+    //returning the cheapest car,
+
+    public String cheapestCar(){
+
+        return cars.stream().sorted(Comparator
+                .comparing(Car::getYearOfProduction))
+                .toList().get(0).toString();
+    }
+
+    //returning cars from at least 3 manufacturers,
+
+    public String manufacturesList(){
+        return cars.get(0).getManufacturers().toString();
+    }
+
+
+   // returning a list of all cars sorted according to the passed parameter: ascending/descending,
+   public String sortAllCars(String parameter){
+        if (Objects.equals(parameter, "descending")){
+            return cars.stream().sorted(Comparator
+                            .comparing(Car::getName))
+                    .toList().toString();
+        } else return cars.stream().sorted(Comparator
+                        .comparing(Car::getName).reversed())
+                .toList().toString();
+
+
+   }
+
+    //checking if a specific car is on the list,
+
+
+    public boolean isCarOnTheList(Car car){
+        for (Car value : cars) if (value.hashCode() == car.hashCode()) return true;
+        return false;
+    }
+
+
+
+
+
+
+
+
 
 
 

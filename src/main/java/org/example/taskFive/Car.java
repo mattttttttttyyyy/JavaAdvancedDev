@@ -24,6 +24,13 @@ public class Car {
     //List<Manufacturer> manufacturersList = new ArrayList<>(List.of(new Manufacturer("Toyota", 1937, "Japan")));
 
 
+    public List<Manufacturer> getManufacturers() {
+        return manufacturers;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public Car(String name, String model, double price, int yearOfProduction, Engines engine) {
         this.name = name;
@@ -47,7 +54,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return name + "\nModel: "+ model + "\nProduction year: "+ yearOfProduction + "\nEngine: " + engine;
+        return "\n"+name + "\nModel: "+ model + "\nProduction year: "+ yearOfProduction + "\nEngine: " + engine;
     }
 
     @Override
