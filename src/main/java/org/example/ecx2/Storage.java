@@ -31,7 +31,11 @@ public class Storage {
         return map.get(key).toString();
     }
     public void findValues (String value){
-        System.out.println(map.containsValue(value));
+        for(Map.Entry<String, List<String>> entry : map.entrySet()){
+            if (entry.getValue().contains(value)){
+                System.out.println(entry.getKey());
+            }
+        }
     }
 
 
