@@ -1,6 +1,5 @@
 package org.example.taskFive;
 /*Create a class called CarService that will contain a list of cars and implement the following methods:
-        checking if a specific car is on the list,
         returning a list of cars produced by a specific manufacturer,
         returning a list of cars produced by a manufacturer with a founding year <,>,<=,>=,=,!= from the specified year.*/
 
@@ -10,8 +9,8 @@ import java.util.stream.IntStream;
 
 public class CarService {
 
-    List<Car> cars = new ArrayList<>(List.of(new Car("Samochodzik", "Yaris", 10000, 2021, Car.Engines.HYBRID),
-            new Car("Samochodzik2", "Duster", 150000, 2020, Car.Engines.L15)));
+    List<Car> cars = new ArrayList<>(List.of(new Car("Samochodzik", "Yaris", 10000, 2021, Car.Engines.HYBRID, Car.Makers.TOYOTA),
+            new Car("Samochodzik2", "Duster", 150000, 2020, Car.Engines.L15, Car.Makers.DACIA)));
 
    // adding cars to the list,
 
@@ -94,6 +93,16 @@ public class CarService {
         for (Car value : cars) if (value.hashCode() == car.hashCode()) return true;
         return false;
     }
+
+    //returning a list of cars produced by a specific manufacturer,
+
+
+    public void listOfCarsByMaker(String maker){
+        IntStream.range(0, cars.size())
+                .filter(i -> Objects.equals(cars.get(i).getMaker().toLowerCase(), maker.toLowerCase()))
+                .mapToObj(i -> cars.get(i)).forEach(System.out::println);
+    }
+
 
 
 

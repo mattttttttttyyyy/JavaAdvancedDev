@@ -20,6 +20,7 @@ public class Car {
     private double price;
     private int yearOfProduction;
     String engine;
+    String maker;
     //Manufacturer manufacturer;
     //List<Manufacturer> manufacturersList = new ArrayList<>(List.of(new Manufacturer("Toyota", 1937, "Japan")));
 
@@ -32,12 +33,13 @@ public class Car {
         return name;
     }
 
-    public Car(String name, String model, double price, int yearOfProduction, Engines engine) {
+    public Car(String name, String model, double price, int yearOfProduction, Engines engine, Makers makers) {
         this.name = name;
         this.model = model;
         this.price = price;
         this.yearOfProduction = yearOfProduction;
         this.engine = String.valueOf(engine);
+        this.maker = String.valueOf(makers);
         //this.manufacturers = manufacturers;
 
 
@@ -47,9 +49,17 @@ public class Car {
         return price;
     }
 
+    public String getMaker() {
+        return maker;
+    }
+
     enum Engines {
         V12, V8, HYBRID, L15, V6;
 
+    }
+
+    enum Makers {
+        TOYOTA, BMW, OPEL, DACIA;
     }
 
     @Override

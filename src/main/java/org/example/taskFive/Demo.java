@@ -2,7 +2,7 @@ package org.example.taskFive;
 
 public class Demo {
     public static void main(String[] args) {
-        Car car = new Car("BMW car", "X5", 160000, 2023, Car.Engines.V12);
+        Car car = new Car("BMW car", "X5", 160000, 2023, Car.Engines.V12, Car.Makers.BMW);
         CarService carService = new CarService();
         carService.addCar(car);
         carService.carsWithV12();
@@ -10,7 +10,7 @@ public class Demo {
 /*        carService.removeCar(2);
         System.out.println("-------------");
         carService.listOfCars();*/
-        carService.addCar(new Car("Maluszek", "Maluch", 670, 1989, Car.Engines.V6));
+        carService.addCar(new Car("Maluszek", "Maluch", 670, 1989, Car.Engines.V6, Car.Makers.DACIA));
 
         System.out.println("\nOLD CAR:");
         carService.olderCars();
@@ -28,9 +28,14 @@ public class Demo {
         System.out.println(carService.sortAllCars("descending"));
 
         System.out.println("****************");
-        Car car2 = new Car("BMW car", "X5", 16000, 2023, Car.Engines.V12);
+        Car car2 = new Car("BMW car", "X5", 16000, 2023, Car.Engines.V12, Car.Makers.BMW);
 
         System.out.println(carService.isCarOnTheList(car2));
+
+
+        System.out.println("**********************");
+
+        carService.listOfCarsByMaker("Dacia");
 
 
 
