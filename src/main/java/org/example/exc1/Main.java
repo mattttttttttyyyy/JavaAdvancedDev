@@ -9,7 +9,7 @@ public class Main {
         List<String> pleaseSort = new ArrayList<>();
 
         pleaseSort.add("a");
-        pleaseSort.add("b");
+        pleaseSort.add("B");
         pleaseSort.add("c");
         pleaseSort.add("D");
         pleaseSort.add("z");

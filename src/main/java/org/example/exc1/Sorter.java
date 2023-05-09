@@ -13,7 +13,6 @@ public class Sorter {
                 .sorted(Comparator.reverseOrder())
                 .toList();
     }
-
     public List<String> sortStringIgnoreCase(List<String> toSort) {
         for (int i = 0; i < toSort.size() - 1; i++) {
             for (int j = i + 1; j < toSort.size(); j++) {
