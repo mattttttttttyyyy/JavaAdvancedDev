@@ -7,10 +7,9 @@ import java.util.stream.Collectors;
 
 public class Sorter {
 
-    List<String> toSort;
 
-    public List<String> sortString(List<String> toSort){
-       return toSort.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+    public List<String> sortString(List<String> toSort) {
+        return toSort.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
     }
 
 }
