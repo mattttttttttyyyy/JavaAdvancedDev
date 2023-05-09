@@ -18,6 +18,7 @@ public class Magazine {
     public void loadBullet(String bullet){
         if (bulletsInMagazine < maxCapacity ){
             bulletsInMagazine++;
+            System.out.println("Loading bullets: " + bulletsInMagazine + "/" + maxCapacity);
         } else {
             System.out.println("FULL");
         }
@@ -29,9 +30,10 @@ public class Magazine {
 
     public void shot(){
         if(isLoaded()){
+            System.out.println("Number of bullet " + bulletsInMagazine);
             System.out.println("SHOT");
             bulletsInMagazine--;
-            System.out.println("Number of bullet " + bulletsInMagazine);
+
             if (isLoaded()){
                 System.out.println("next bullet ready");
             } else {

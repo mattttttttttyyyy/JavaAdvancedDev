@@ -13,7 +13,7 @@ public class Demo {
 
         magazine.shot();
 
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 13; i++) {
             magazine.loadBullet("Test");
 
         }
