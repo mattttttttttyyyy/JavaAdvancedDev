@@ -8,7 +8,9 @@ public class Sorter {
 
 
     public List<String> sortString(List<String> toSort) {
-        return toSort.stream().sorted(Comparator.reverseOrder()).toList();
+        return toSort.stream()
+                .sorted(Comparator.reverseOrder())
+                .toList();
     }
 
 }
