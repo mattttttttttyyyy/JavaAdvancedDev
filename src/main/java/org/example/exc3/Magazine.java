@@ -11,36 +11,33 @@ define the size of the magazine using a constructor. Implement the following met
 
 public class Magazine {
 
-    private final int maxCapacity = 12;
+    private final int maxCapacity;
     private int bulletsInMagazine;
 
+    public Magazine(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
 
-    public void loadBullet(String bullet){
-        if (bulletsInMagazine < maxCapacity ){
+    public void loadBullet(String bullet) {
+        if (bulletsInMagazine < maxCapacity) {
             bulletsInMagazine++;
             System.out.println("Loading bullets: " + bulletsInMagazine + "/" + maxCapacity);
-        } else {
-            System.out.println("FULL");
-        }
+        } else System.out.println("FULL");
 
     }
-    public boolean isLoaded(){
+
+    public boolean isLoaded() {
         return bulletsInMagazine != 0;
     }
 
-    public void shot(){
-        if(isLoaded()){
-            System.out.println("Number of bullet " + bulletsInMagazine);
+    public void shot() {
+        if (!isLoaded()) System.out.println("Empty");
+        else {
+            System.out.println("Number of bullets " + bulletsInMagazine + "/" + maxCapacity);
             System.out.println("SHOT");
             bulletsInMagazine--;
-
-            if (isLoaded()){
-                System.out.println("next bullet ready");
-            } else {
-                System.out.println("Empty");
-            }
-        } else {
-            System.out.println("Empty");
+            if (isLoaded()) System.out.println("next bullet ready");
+            else System.out.println("Empty");
         }
     }
 
