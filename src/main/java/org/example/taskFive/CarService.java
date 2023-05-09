@@ -104,6 +104,18 @@ public class CarService {
     }
 
 
+    //returning a list of cars produced by a manufacturer with a founding year <,>,<=,>=,=,!= from the specified year.*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
