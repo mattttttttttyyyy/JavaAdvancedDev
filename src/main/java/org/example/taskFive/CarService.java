@@ -32,26 +32,34 @@ public class CarService {
     //returning the list of all cars,
 
     public void listOfCars(){
-        IntStream.range(0, cars.size()).mapToObj(i -> ("Car nr ") + i + "\n" + cars.get(i)).forEachOrdered(System.out::println);
+        IntStream.range(0, cars.size())
+                .mapToObj(i -> ("Car nr ") + i + "\n" + cars.get(i))
+                .forEachOrdered(System.out::println);
     }
 
     //returning the cars with a V12 engine,
 
     public void carsWithV12(){
-        IntStream.range(0, cars.size()).filter(i -> Objects.equals(cars.get(i).engine, "V12")).mapToObj(i -> cars.get(i)).forEach(System.out::println);
+        IntStream.range(0, cars.size())
+                .filter(i -> Objects.equals(cars.get(i).engine, "V12"))
+                .mapToObj(i -> cars.get(i)).forEach(System.out::println);
     }
 
 //    returning cars manufactured before 1999,
 
     public void olderCars(){
-        cars.stream().filter(car -> car.getYearOfProduction() < 1999).forEachOrdered(System.out::println);
+        cars.stream().filter(car -> car
+                .getYearOfProduction() < 1999)
+                .forEachOrdered(System.out::println);
     }
 
     //returning the most expensive car,
 
     public String mostExpensiveCar(){
 
-        return cars.stream().sorted(Comparator.comparing(Car::getYearOfProduction).reversed()).toList().get(0).toString();
+        return cars.stream().sorted(Comparator
+                .comparing(Car::getYearOfProduction)
+                .reversed()).toList().get(0).toString();
     }
 
 
