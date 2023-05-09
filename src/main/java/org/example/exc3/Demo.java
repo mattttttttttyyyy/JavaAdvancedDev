@@ -18,6 +18,10 @@ public class Demo {
 
         }
 
+        for (int i = 0; i < 15; i++) {
+            magazine.shot();
+        }
+
 
 
     }

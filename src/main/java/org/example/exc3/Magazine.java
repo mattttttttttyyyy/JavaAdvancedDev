@@ -30,7 +30,9 @@ public class Magazine {
     public void shot(){
         if(isLoaded()){
             System.out.println("SHOT");
-            if (!isLoaded()){
+            bulletsInMagazine--;
+            System.out.println("Number of bullet " + bulletsInMagazine);
+            if (isLoaded()){
                 System.out.println("next bullet ready");
             } else {
                 System.out.println("Empty");
