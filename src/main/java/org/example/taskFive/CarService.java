@@ -51,7 +51,6 @@ public class CarService {
 
     public String mostExpensiveCar(){
 
-        System.out.println("\nMost expensive: ");
         return cars.stream().sorted(Comparator.comparing(Car::getYearOfProduction).reversed()).toList().get(0).toString();
     }
 

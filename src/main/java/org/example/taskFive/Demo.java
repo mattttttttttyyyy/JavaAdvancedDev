@@ -16,6 +16,7 @@ public class Demo {
         carService.olderCars();
 
 
+        System.out.println("\nMost expensive: ");
 
         System.out.println(carService.mostExpensiveCar());
 
