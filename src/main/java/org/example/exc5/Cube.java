@@ -17,9 +17,7 @@ public class Cube extends ThreeDShape{
             System.out.println("under filled");
         } else if (volume == waterFilled) {
             System.out.println("Full");
-        } else {
-            System.out.println("Over fill");
-        }
+        } else System.out.println("Over fill");
 
         return false;
     }
