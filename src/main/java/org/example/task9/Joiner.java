@@ -12,6 +12,10 @@ public class Joiner<T> {
         this.joiner = joiner;
     }
 
+    public String getJoiner() {
+        return joiner;
+    }
+
     public String join(T ... params){
         StringBuilder generatedString = new StringBuilder();
         int stringLeft = params.length;

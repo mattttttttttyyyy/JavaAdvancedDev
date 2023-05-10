@@ -27,6 +27,23 @@ public class JoinerTest {
         assertThat(result).isEqualTo("1-2-3-4-6");
     }
 
+    @Test
+    public void shouldJoinerStringWork()
+    {
+        JoinerString joinerString = new JoinerString("-");
+        String result = joinerString.join(1, 2, 3, 4, 5);
+        assertThat(result).isEqualTo("[0:text:1-1:text:2-2:text:3-3:text:4-4:text:5]");
+    }
+
+    @Test
+    public void shouldJoinerIntegerWork(){
+        JoinerInteger joinerInteger = new JoinerInteger(",");
+        String result = joinerInteger.join(1, 2, 3, 4, 5);
+        assertThat(result).isEqualTo("{1,2,3,4,5}");
+
+    }
+
+
 
 
 }
