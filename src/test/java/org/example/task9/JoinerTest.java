@@ -2,21 +2,13 @@ package org.example.task9;
 
 import org.junit.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.junit.Assert.*;
-import org.assertj.core.data.Percentage;
-import org.junit.Test;
+
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.jupiter.params.provider.ValueSource;
 
-import java.security.MessageDigest;
 import java.util.stream.Stream;
-
-import static org.junit.Assert.*;
-
-import static org.junit.Assert.*;
 
 public class JoinerTest {
 
@@ -43,7 +35,20 @@ public class JoinerTest {
 
     }
 
+    @ParameterizedTest
+    @MethodSource
+    public void shouldJoinerIntegerWorkTest(String expected, String joiner){
 
+        JoinerInteger joinerInteger = new JoinerInteger(joiner);
+        String result = joinerInteger.join(1, 2, 3, 4, 5);
+        assertThat(result).isEqualTo(expected);
+    }
+
+    public static Stream<Arguments> shouldJoinerIntegerWorkTest(){
+        return Stream.of(Arguments.of("{1,2,3,4,5}", ","),
+        Arguments.of("{1=2=3=4=5}", "=")
+        );
+    }
 
 
 }
