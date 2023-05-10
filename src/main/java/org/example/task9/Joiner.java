@@ -8,11 +8,22 @@ public class Joiner<T> {
     private T elements;
     private String joiner;
 
+    public Joiner(String joiner) {
+        this.joiner = joiner;
+    }
 
-    public String join(String joiner, T ... params){
+    public String join(T ... params){
         StringBuilder generatedString = new StringBuilder();
+        int stringLeft = params.length;
 
-        for (T param : params) generatedString.append(param.toString()).append(joiner);
+        for (T param : params) {
+            generatedString.append(param.toString());
+            if(stringLeft > 1){
+                generatedString.append(joiner);
+            }
+            stringLeft--;
+        }
+
         return generatedString.toString();
     }
 

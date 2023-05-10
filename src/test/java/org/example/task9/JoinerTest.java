@@ -22,9 +22,9 @@ public class JoinerTest {
 
     @Test
     public void shouldAcceptIntegers(){
-        Joiner<Integer> joiner = new Joiner();
-        String result = joiner.join("-", 1, 2, 3, 4, 6);
-        assertThat(result).isEqualTo("1-2-3-4-6-");
+        Joiner<Integer> joiner = new Joiner("-");
+        String result = joiner.join(1, 2, 3, 4, 6);
+        assertThat(result).isEqualTo("1-2-3-4-6");
     }
 
 
