@@ -1,7 +1,6 @@
 package org.example.task9;
 
 import org.junit.Test;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -23,8 +22,8 @@ public class JoinerTest {
     public void shouldJoinerStringWork()
     {
         JoinerString joinerString = new JoinerString("-");
-        String result = joinerString.join(1, 2, 3, 4, 5);
-        assertThat(result).isEqualTo("[0:text:1-1:text:2-2:text:3-3:text:4-4:text:5]");
+        String result = joinerString.join("a", "b", "c");
+        assertThat(result).isEqualTo("[0:a-2-2:text:3-3:text:4-4:text:5]");
     }
 
     @Test

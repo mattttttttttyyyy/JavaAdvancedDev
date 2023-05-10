@@ -10,30 +10,22 @@ import java.util.Arrays;
 
 import static java.lang.System.*;
 
-public class JoinerString extends Joiner<Integer>{
+public class JoinerString extends Joiner<String>{
 
     public JoinerString(String joiner) {
         super(joiner);
     }
 
     @Override
-    public String join(Integer... params) {
+    public String join(String... params) {
         StringBuilder generatedString = new StringBuilder();
         int run = 0;
-        int stringLeft = params.length;
-        for (Integer param:
+        generatedString.append("[");
+        for (String param:
              params) {
-            if (run == 0) generatedString.append("[");
-            generatedString.append(run).append(":text:").append(param);
-            if(stringLeft > 1){
-                generatedString.append(getJoiner());
-            } else generatedString.append("]");
-            stringLeft--;
-
+            generatedString.append(run).append(super.join(param));
             run++;
-
         }
-
-        return generatedString.toString();
+        return generatedString.append("]").toString();
     }
 }
