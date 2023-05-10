@@ -15,25 +15,25 @@ public enum ConversionType {
     MILES_TO_KILOMETERS;
 
 
-    public double conversionResult(int value, ConversionType conversionType){
+    public double conversionResult(ConversionType conversionType){
         switch (conversionType){
             case METERS_TO_YARDS -> {
-                return value * 1.0936133;
+                return  1.0936133;
             }
             case KILOMETERS_TO_MILES -> {
-                return value * 0.621371192;
+                return  0.621371192;
             }
             case YARDS_TO_METERS -> {
-                return 0.9144 * value;
+                return 0.9144 ;
             }
             case MILES_TO_KILOMETERS -> {
-                return value * 1.609344;
+                return 1.609344;
             }
             case CENTIMETERS_TO_INCHES -> {
-                return value * 0.393700787;
+                return 0.393700787;
             }
             case INCHES_TO_CENTIMETERS -> {
-                return value * 2.54;
+                return 2.54;
             }
         }
         return 0;

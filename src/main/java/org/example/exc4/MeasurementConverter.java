@@ -8,11 +8,9 @@ INCHES_TO_CENTIMETERS, KILOMETERS_TO_MILES, MILES_TO_KILOMETERS.
         Converter of the corresponding type to perform the conversion and return the result.*/
 public class MeasurementConverter {
 
-    int valueToConvert;
-
     public double convert(int valueToConvert, ConversionType conversionType){
 
-     return conversionType.conversionResult(valueToConvert, conversionType);
+     return conversionType.conversionResult(conversionType) * valueToConvert;
 
     }
 
