@@ -12,24 +12,36 @@ named removeFromBasket() that removes an element from the basket (decreasing the
 import java.util.ArrayList;
 import java.util.List;
 
-public class Basket {
-    private List<Integer> itemsInBasket = new ArrayList<>();
-    private final int basketCapacity = 10;
+public class Basket<T> {
+    private T item;
+    private final int SIZE = 3;
+    private List<T> items;
 
-
-
-    public void addToBasket(int item){
-        if (itemsInBasket.size() == basketCapacity){
-            throw new IllegalStateException("Basket full");
-        } else itemsInBasket.add(item);
+    public Basket() {
+        items = new ArrayList<>();
     }
 
-    public void removeFromBasket(){
-        try {
-            itemsInBasket.remove(itemsInBasket.size()-1);
-        } catch (Exception e) {
-            System.out.println("BasketEmptyException");;
-        }
+    public void addToBasket(T item) {
+        if (checkEmptySpacesInBasket(item)) items.add(item);
+        else throw new BasketException("Basket is full!");
+    }
 
+    public void removeFromBasket(T item) {
+        if (checkEmptySpacesInBasket(item)) items.remove(item);
+        else throw new BasketException("Basket is empty!");
+    }
+
+    private boolean checkEmptySpacesInBasket(T item) {
+        return items.size() < SIZE;
+    }
+
+    public List<T> getItems() {
+        return items;
+    }
+}
+
+class BasketException extends RuntimeException {
+    public BasketException(String str) {
+        super(str);
     }
 }
