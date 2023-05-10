@@ -10,4 +10,6 @@ public class Hexagon extends Shape {
     public int calculateArea(int length) {
         return (int) ((6*(length*length))/(4*Math. tan(Math. PI/6)));
     }
+
+
 }

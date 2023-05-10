@@ -10,4 +10,6 @@ public class Triangle extends Shape {
     public int calculateArea(int length) {
         return (int)(length * length) / 2;
     }
+
+
 }

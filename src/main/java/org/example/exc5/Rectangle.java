@@ -18,4 +18,6 @@ for calculating the perimeter and calculateArea() for calculating the area.
     public int calculateArea(int length) {
         return length * length;
     }
+
+
 }
